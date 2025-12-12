@@ -5,17 +5,17 @@
     <meta property="og:image" content="https://i.ibb.co/M8S0Zzj/live-streaming.png" itemprop="thumbnailUrl">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>%s</title>
+    <title>{title}</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css"/>
     <style>
-        * {
+        * {{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+        }}
 
-        body {
+        body {{
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
             color: white;
             min-height: 100vh;
@@ -23,30 +23,30 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-        }
+        }}
 
         /* Header */
-        header {
+        header {{
             width: 100%;
             max-width: 1100px;
             text-align: center;
             padding: 15px 0;
             margin-bottom: 20px;
-        }
+        }}
 
-        #file-name {
+        #file-name {{
             font-size: 1.2rem;
             color: #aaa;
             margin-bottom: 15px;
             overflow: hidden;
             white-space: nowrap;
-        }
+        }}
 
-        .rs-header {
+        .rs-header {{
             margin-bottom: 15px;
-        }
+        }}
 
-        .main-title {
+        .main-title {{
             font-size: 2.8rem;
             font-weight: 900;
             background: linear-gradient(45deg, #ff3366, #33ccff);
@@ -55,45 +55,45 @@
             background-clip: text;
             text-shadow: 0 0 30px rgba(255, 51, 102, 0.3);
             letter-spacing: 2px;
-        }
+        }}
 
-        .subtitle {
+        .subtitle {{
             font-size: 1rem;
             color: #aaa;
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-top: 5px;
-        }
+        }}
 
         /* Video Container */
-        .container {
+        .container {{
             width: 100%;
             max-width: 1100px;
             margin: 20px 0;
-        }
+        }}
 
-        .video-container {
+        .video-container {{
             background: #000;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
             margin-bottom: 25px;
-        }
+        }}
 
         /* Plyr Player Customization */
-        .plyr {
+        .plyr {{
             border-radius: 12px;
             width: 100% !important;
             height: auto !important;
-        }
+        }}
 
-        .plyr video {
+        .plyr video {{
             width: 100%;
             height: 100%;
-        }
+        }}
 
         /* Telegram Section - Small */
-        .telegram-section {
+        .telegram-section {{
             width: 100%;
             max-width: 1100px;
             text-align: center;
@@ -102,9 +102,9 @@
             border-radius: 12px;
             margin-top: 10px;
             border: 1px solid rgba(0, 136, 204, 0.3);
-        }
+        }}
 
-        .join-button {
+        .join-button {{
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -118,25 +118,25 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
             margin-bottom: 10px;
-        }
+        }}
 
-        .join-button:hover {
+        .join-button:hover {{
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
-        }
+        }}
 
-        .channel-name {
+        .channel-name {{
             font-size: 0.9rem;
             color: #ccc;
-        }
+        }}
 
-        .channel-name span {
+        .channel-name span {{
             color: #ffcc00;
             font-weight: bold;
-        }
+        }}
 
         /* Footer */
-        footer {
+        footer {{
             margin-top: 25px;
             text-align: center;
             color: #666;
@@ -144,53 +144,53 @@
             padding: 15px;
             width: 100%;
             max-width: 1100px;
-        }
+        }}
 
-        footer a {
+        footer a {{
             color: #33ccff;
             text-decoration: none;
-        }
+        }}
 
         /* Responsive */
-        @media (max-width: 768px) {
-            body {
+        @media (max-width: 768px) {{
+            body {{
                 padding: 15px;
-            }
+            }}
             
-            .main-title {
+            .main-title {{
                 font-size: 2.2rem;
-            }
+            }}
             
-            .subtitle {
+            .subtitle {{
                 font-size: 0.9rem;
                 letter-spacing: 3px;
-            }
+            }}
             
-            .telegram-section {
+            .telegram-section {{
                 padding: 15px;
-            }
+            }}
             
-            .join-button {
+            .join-button {{
                 padding: 10px 25px;
                 font-size: 0.95rem;
-            }
-        }
+            }}
+        }}
 
-        @media (max-width: 480px) {
-            .main-title {
+        @media (max-width: 480px) {{
+            .main-title {{
                 font-size: 1.8rem;
-            }
+            }}
             
-            .subtitle {
+            .subtitle {{
                 font-size: 0.8rem;
                 letter-spacing: 2px;
-            }
+            }}
             
-            .join-button {
+            .join-button {{
                 padding: 8px 20px;
                 font-size: 0.9rem;
-            }
-        }
+            }}
+        }}
     </style>
 </head>
 <body>
@@ -200,14 +200,14 @@
             <div class="subtitle">PREMIUM VIDEO PLAYER</div>
         </div>
         <div id="file-name">
-           <marquee direction="left">%s</marquee>
+           <marquee direction="left">{file_name}</marquee>
         </div>
     </header>
 
     <div class="container">
         <div class="video-container">
             <video class="player" playsinline controls data-poster="https://i.ibb.co/M8S0Zzj/live-streaming.png">
-                <source src="%s" type="video/mp4">
+                <source src="{video_url}" type="video/mp4">
                 Your browser doesn't support HTML5 video.
             </video>
         </div>
@@ -219,14 +219,14 @@
             <i class="fab fa-telegram"></i>
             <span>JOIN TELEGRAM CHANNEL</span>
         </a>
-        <div class="channel-name">Channel: <span>@CARTOONFUNNY03i</span></div>
+        <div class="channel-name">Channel: <span>@cartoonfunny03</span></div>
     </div>
     
     <!-- Font Awesome for Telegram Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {{
             const controls = [
                 'play-large',
                 'rewind',
@@ -245,7 +245,7 @@
                 'fullscreen'
             ];
             
-            const player = new Plyr('.player', {
+            const player = new Plyr('.player', {{
                 controls: controls,
                 ratio: '16:9',
                 autoplay: false,
@@ -254,19 +254,19 @@
                 disableContextMenu: true,
                 hideControls: false,
                 resetOnEnd: false,
-                keyboard: { focused: true, global: true },
-                tooltips: { controls: true, seek: true }
-            });
+                keyboard: {{ focused: true, global: true }},
+                tooltips: {{ controls: true, seek: true }}
+            }});
             
             // Ensure video loads properly
-            player.on('ready', () => {
+            player.on('ready', () => {{
                 console.log('RS ANIME Player ready');
-            });
+            }});
             
-            player.on('error', (error) => {
+            player.on('error', (error) => {{
                 console.error('Player error:', error);
-            });
-        });
+            }});
+        }});
     </script>
 </body>
 </html>
